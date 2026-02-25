@@ -1,0 +1,98 @@
+{
+  "name": "error-sound-player",
+  "displayName": "Error Sound Player",
+  "description": "Cross-platform error sound player for VS Code",
+  "version": "0.0.2",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "error",
+    "sound",
+    "audio",
+    "notification",
+    "terminal",
+    "macos",
+    "linux",
+    "windows"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "error-sound-player.test",
+        "title": "Error Sound: Test Sound"
+      },
+      {
+        "command": "error-sound-player.enable",
+        "title": "Error Sound: Enable"
+      },
+      {
+        "command": "error-sound-player.disable",
+        "title": "Error Sound: Disable"
+      },
+      {
+        "command": "error-sound-player.selectSound",
+        "title": "Error Sound: Select Custom Sound"
+      }
+    ],
+    "configuration": {
+      "title": "Error Sound Player",
+      "properties": {
+        "errorSoundPlayer.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable error sounds"
+        },
+        "errorSoundPlayer.soundFile": {
+          "type": "string",
+          "default": "faaa.wav",
+          "description": "Name of the sound file to play"
+        },
+        "errorSoundPlayer.volume": {
+          "type": "number",
+          "default": 70,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Volume level (0-100)"
+        },
+        "errorSoundPlayer.cooldownPeriod": {
+          "type": "number",
+          "default": 2,
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Seconds to wait between sounds"
+        },
+        "errorSoundPlayer.playOnlyOnError": {
+          "type": "boolean",
+          "default": true,
+          "description": "Only play for errors (not warnings)"
+        },
+        "errorSoundPlayer.customSoundPaths": {
+          "type": "array",
+          "default": [],
+          "description": "Additional folders to look for sounds"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --allow-missing-repository",
+    "install": "code --install-extension error-sound-player-0.0.2.vsix --force"
+  },
+  "devDependencies": {
+    "@types/node": "^16.x",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^5.0.0"
+  }
+}

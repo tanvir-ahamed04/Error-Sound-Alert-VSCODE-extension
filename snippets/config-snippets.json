@@ -1,0 +1,20 @@
+{
+  "Error Sound Configuration": {
+    "prefix": "errorsound-config",
+    "body": [
+      "{",
+      "  \"errorSoundPlayer.enabled\": ${1:true},",
+      "  \"errorSoundPlayer.soundFile\": \"${2:faaa.mp3}\",",
+      "  \"errorSoundPlayer.volume\": ${3:70},",
+      "  \"errorSoundPlayer.detectFrom\": {",
+      "    \"terminal\": ${4:true},",
+      "    \"diagnostics\": ${5:true},",
+      "    \"tasks\": ${6:true},",
+      "    \"debug\": ${7:true}",
+      "  },",
+      "  \"errorSoundPlayer.cooldownPeriod\": ${8:5}",
+      "}"
+    ],
+    "description": "Create Error Sound Player configuration"
+  }
+}
