@@ -3,7 +3,11 @@
   "displayName": "Error Sound Player",
   "description": "Cross-platform error sound player for VS Code",
   "version": "0.0.2",
-  "publisher": "your-publisher-name",
+  "publisher": "Tanvir-Ahamed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanvir-ahamed04/Error-Sound-Alert-VSCODE-extension.git"
+  },
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -28,7 +32,7 @@
     "commands": [
       {
         "command": "error-sound-player.test",
-        "title": "Error Sound: Test Sound"
+        "title": "Error Sound: faaah"
       },
       {
         "command": "error-sound-player.enable",
@@ -87,7 +91,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "package": "vsce package --allow-missing-repository",
+    "package": "vsce package",
     "install": "code --install-extension error-sound-player-0.0.2.vsix --force"
   },
   "devDependencies": {
